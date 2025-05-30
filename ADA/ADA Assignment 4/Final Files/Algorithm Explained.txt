@@ -1,0 +1,41 @@
+This code implements a specific graph theory algorithm to find (s,t)-cut vertices in a directed graph. It first reads a graph from the standard input, 
+then computes certain paths in the graph, and finally identifies and outputs the (s,t)-cut vertices. Let's break it down step by step:
+
+Input Phase
+The code begins by asking the user for the number of vertices (n), the number of edges (m), a starting vertex (s), and a target vertex (t).
+It then reads the edges of the graph. For each edge, the program expects two integers u and v, representing an edge from vertex u to vertex v.
+The graph is stored in two ways: as a direct adjacency list (graph) where graph[u] contains all vertices v such that there is an edge from u to v, 
+and as a reverse adjacency list (reverseGraph) where reverseGraph[v] contains all u.
+
+Topological Sorting
+The function dfsTopoSort performs a Depth-First Search (DFS) to generate a topological sort of the vertices. It does this by marking each visited vertex 
+and pushing each vertex onto a stack (topoStack) only after all vertices reachable from it have been visited. This ensures that for every directed edge 
+from vertex u to vertex v, u appears before v in the topological order.
+This topological sort is used to ensure that when calculating paths, each vertex is processed after all vertices leading to it have been processed.
+
+Counting Paths
+The countPaths function counts the number of paths from the starting vertex s to all other vertices (when called with graph and pathsFromS) and the number 
+of paths from all vertices to the target vertex t (when called with reverseGraph and pathsToT).
+It iterates over the vertices in topological order (popped from topoStack) and for each vertex v, it adds the count of paths to v to the count of paths for 
+each successor u of v (paths[u] += paths[v]), effectively counting all paths passing through v.
+
+Identifying (s,t)-Cut Vertices
+After computing the number of paths from s to each vertex and from each vertex to t, the code checks for (s,t)-cut vertices. These are vertices v (other 
+than s and t) such that the number of paths from s to t passing through v is equal to the total number of paths from s to t. This is determined by the 
+condition pathsFromS[v] * pathsToT[v] == pathsFromS[t].
+The vertices that satisfy this condition are collected and printed as (s,t)-cut vertices.
+
+Main Logic
+The program uses two DFS topological sorts: one on the original graph to compute paths from s and another on the reversed graph to compute paths to t.
+It initializes pathsFromS[s] = 1 and pathsToT[t] = 1 to start the path counts from the respective vertices.
+After computing paths, it checks for vertices that, if removed, would disconnect the number of paths from s to t that pass through those vertices, 
+effectively identifying critical points (or (s,t)-cut vertices) in the graph's connectivity from s to t.
+
+Output
+Finally, the code prints out the identified (s,t)-cut vertices.
+
+
+
+
+
+

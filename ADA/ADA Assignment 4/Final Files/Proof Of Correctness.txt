@@ -1,0 +1,6 @@
+Proof of Correctness:
+• The topological sort ensures that we compute path counts in a directed manner that respects the graph's acyclic nature.
+• The dynamic programming approach for counting paths ensures that we accurately calculate the number of paths from s to every vertex and from every vertex to t.
+• By finding vertices where the product of incoming paths from s and outgoing paths to t matches the total number of paths from s to t, we ensure that these vertices are critical for connecting s to
+t.
+Therefore, the algorithm correctly identifies all (s, t)-cut vertices. Removing any of these vertices would break all paths from s to t, as their removal would mean there are no paths from s to t that do not pass through the removed vertex, thereby disconnecting s and t.

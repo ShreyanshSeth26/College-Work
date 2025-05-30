@@ -1,0 +1,28 @@
+Input Number Of Vertices: 15
+Input Number Of Edges: 22
+Input Starting Vertex: 2
+Input Target Vertex: 13
+Input edge 1: 1 2
+Input edge 2: 2 3
+Input edge 3: 3 4
+Input edge 4: 3 5
+Input edge 5: 3 7
+Input edge 6: 4 6
+Input edge 7: 4 5
+Input edge 8: 5 6
+Input edge 9: 5 7
+Input edge 10: 6 7
+Input edge 11: 7 8
+Input edge 12: 7 9
+Input edge 13: 8 10
+Input edge 14: 8 9
+Input edge 15: 9 10
+Input edge 16: 10 11
+Input edge 17: 10 12
+Input edge 18: 11 12
+Input edge 19: 12 13
+Input edge 20: 13 14
+Input edge 21: 13 15
+Input edge 22: 14 15
+
+The (s,t)-cut vertices are: 3, 7, 10, 12

@@ -1,0 +1,55 @@
+Pseudocode:
+
+Define Function dfsTopoSort(v, graph, visited, topoStack)
+    Mark v as visited
+    For each neighbor u of v in graph
+        If u is not visited
+            Call dfsTopoSort(u, graph, visited, topoStack)
+    Push v onto topoStack
+
+Define Function countPaths(graph, paths, topoStack)
+    While topoStack is not empty
+        Pop v from topoStack
+        For each neighbor u of v in graph
+            Increment paths[u] by paths[v]
+
+Start Main Program
+    Input the number of vertices n
+    Input the number of edges m
+    Input the starting vertex s
+    Input the target vertex t
+
+    Initialize graph and reverseGraph as lists of lists with n empty lists
+    Initialize visited with n false values
+    Initialize topoStack as an empty stack
+
+    For each edge from 1 to m
+        Input edge endpoints u, v
+        Add v to the adjacency list of u in graph
+        Add u to the adjacency list of v in reverseGraph
+
+    For each vertex i from 0 to n-1
+        If i is not visited
+            Call dfsTopoSort(i, graph, visited, topoStack)
+
+    Initialize pathsFromS with n zeros, set pathsFromS[s] to 1
+    Call countPaths(graph, pathsFromS, topoStack)
+
+    Reset visited to all false
+    Clear topoStack
+
+    For each vertex i from 0 to n-1
+        If i is not visited
+            Call dfsTopoSort(i, reverseGraph, visited, topoStack)
+
+    Initialize pathsToT with n zeros, set pathsToT[t] to 1
+    Call countPaths(reverseGraph, pathsToT, topoStack)
+
+    Initialize stCutVertices as an empty list
+    For each vertex v from 0 to n-1
+        If v > s AND v < t AND pathsFromS[v] * pathsToT[v] equals pathsFromS[t]
+            Add v to stCutVertices
+
+    Print "The (s,t)-cut vertices are: " followed by all vertices in stCutVertices
+
+End Main Program

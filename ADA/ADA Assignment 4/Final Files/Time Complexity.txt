@@ -1,0 +1,71 @@
+To provide a detailed explanation of the worst-case time complexity for the given code, taking into
+account every function and loop, let's break down each significant part of the code and its respective
+
+complexity.
+
+1. DFS Topological Sort: *dfsTopoSort*
+
+This function is called once for every vertex that has not been visited, ensuring that each vertex and
+edge is considered exactly once during the DFS process. The complexity of DFS for a graphis O (V +
+EF), where V is the number of vertices and F is the number of edges. This accounts for visiting every
+
+vertex once and exploring every edge once.
+Complexity: O(V + E)
+
+2. Counting Paths: “countPaths
+
+This function is executed twice, once for the original graph and once for the reverse graph. It iterates
+over each vertex in the topological order and, for each vertex, iterates over its outgoing edges to
+accumulate path counts. Since each edge is considered exactly once across all iterations, the
+
+complexity for each call is O(V + FE).
+
+Complexity per call: O(V + E)
+
+Total for two calls: O(2(V + F)) which simplifies to O(V + E)
+
+3. Preparing for Counting Paths
+
+Before each call to ~countPaths ’, there's a preparation phase:
+
+* Filling the “visited” vector with “false”, whichis O(V).
+* Emptying the “topoStack” if it's not already empty, which happens twice and has a complexity of
+O (V) in the worst case since you might need to pop every vertex from the stack.
+
+Complexity for preparation steps: O(V ) per preparation, O(2V ) in total, which
+
+simplifies to O(V )
+
+4. identifying (s,t)-cut Vertices
+
+After counting paths, the code iterates over all vertices to identify (s,t)-cut vertices. This involves a
+
+single loop through all vertices and constanttime checks and multiplications for each, resulting in
+
+O(V).
+Complexity: O(V )
+
+Combining the Parts
+
+When combining these parts, note that the largest terms dictate the overall complexity. Here's how they
+
+add up:
+
+* DFS and topological sorting: O(V + E)
+
+* Counting paths (twice, for forward and reverse graphs): O(V of E), as multiplying by a constant
+factor does not change the O-notation.
+
+* Preparing for counting paths (including vector filling and stack popping): O (V), as its a smaller term
+inthe context of V + E.
+
+* Identifying (s,0-cut vertices: O(V)
+
+Overall Complexity: O(V + E)
+
+Even when considering each function and loop explicitly, the dominant factors are the operations that
+involve traversing the graph and its edges, which are the DFS topological sort and the counting of paths.
+The preparation steps and the identification of cut vertices, while necessary, do not add a higher order
+
+of complexity than O(V + E). Thus, the overall worst-case time complexity remains O(V + £).
+

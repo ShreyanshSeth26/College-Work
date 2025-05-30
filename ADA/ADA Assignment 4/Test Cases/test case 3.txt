@@ -1,0 +1,41 @@
+Input Number Of Vertices: 20
+Input Number Of Edges: 35
+Input Starting Vertex: 1
+Input Target Vertex: 20
+Input edge 1: 1 2
+Input edge 2: 2 3
+Input edge 3: 2 4
+Input edge 4: 3 5
+Input edge 5: 4 5
+Input edge 6: 4 6
+Input edge 7: 5 7
+Input edge 8: 6 7
+Input edge 9: 6 8
+Input edge 10: 7 9
+Input edge 11: 8 9
+Input edge 12: 8 10
+Input edge 13: 9 11
+Input edge 14: 10 11
+Input edge 15: 11 12
+Input edge 16: 11 13
+Input edge 17: 12 14
+Input edge 18: 13 14
+Input edge 19: 13 15
+Input edge 20: 14 16
+Input edge 21: 15 16
+Input edge 22: 15 17
+Input edge 23: 16 18
+Input edge 24: 17 18
+Input edge 25: 17 19
+Input edge 26: 18 20
+Input edge 27: 19 20
+Input edge 28: 3 8
+Input edge 29: 5 10
+Input edge 30: 7 12
+Input edge 31: 9 14
+Input edge 32: 11 16
+Input edge 33: 13 18
+Input edge 34: 15 20
+Input edge 35: 2 7
+
+The (s,t)-cut vertices are: 2
