@@ -1,0 +1,403 @@
+'# EMS Version: Version 2024.0 - Sep 01 2023 - ACIS 33.0.1 -
+
+'# length = mm
+'# frequency = kHz
+'# time = s
+'# frequency range: fmin = 0.0 fmax = 0.0
+'# created = '[VERSION]2024.0|33.0.1|20230901[/VERSION]
+
+
+'@ define units
+
+'[VERSION]2024.0|33.0.1|20230901[/VERSION]
+With Units 
+     .SetUnit "Length", "mm"
+     .SetUnit "Temperature", "degC"
+     .SetUnit "Voltage", "V"
+     .SetUnit "Current", "A"
+     .SetUnit "Resistance", "Ohm"
+     .SetUnit "Conductance", "S"
+     .SetUnit "Capacitance", "F"
+     .SetUnit "Inductance", "H"
+     .SetUnit "Frequency", "kHz"
+     .SetUnit "Time", "s"
+     .SetResultUnit "frequency", "frequency", "" 
+End With
+
+'@ change solver type
+
+'[VERSION]2024.0|33.0.1|20230901[/VERSION]
+ChangeSolverType "LF Frequency Domain"
+
+'@ define lf solver frequency settings
+
+'[VERSION]2024.0|33.0.1|20230901[/VERSION]
+With LFSolver
+     .ResetFrequencySettings 
+     .AddFrequency "1" 
+End With
+
+'@ define boundaries
+
+'[VERSION]2024.0|33.0.1|20230901[/VERSION]
+With Boundary
+     .Xmin "electric"
+     .Xmax "electric"
+     .Ymin "electric"
+     .Ymax "electric"
+     .Zmin "magnetic"
+     .Zmax "magnetic"
+     .Xsymmetry "none"
+     .Ysymmetry "none"
+     .Zsymmetry "none"
+     .ApplyInAllDirections "False"
+     .XminPotential ""
+     .XminPotentialType "None"
+     .XmaxPotential ""
+     .XmaxPotentialType "None"
+     .YminPotential ""
+     .YminPotentialType "None"
+     .YmaxPotential ""
+     .YmaxPotentialType "None"
+End With
+
+'@ new component: component1
+
+'[VERSION]2024.0|33.0.1|20230901[/VERSION]
+Component.New "component1"
+
+'@ define curve circle: curve1:path1
+
+'[VERSION]2024.0|33.0.1|20230901[/VERSION]
+With Circle
+     .Reset 
+     .Name "path1" 
+     .Curve "curve1" 
+     .Radius "5" 
+     .Xcenter "0" 
+     .Ycenter "5+0.322+0.1" 
+     .Segments "0" 
+     .Create
+End With
+
+
+'@ define curve circle: curve1:path2
+
+'[VERSION]2024.0|33.0.1|20230901[/VERSION]
+With Circle
+     .Reset 
+     .Name "path2" 
+     .Curve "curve1" 
+     .Radius "5" 
+     .Xcenter "0" 
+     .Ycenter "-(5+0.322+0.1)" 
+     .Segments "0" 
+     .Create
+End With
+
+
+'@ define curve circle: curve1:profile
+
+'[VERSION]2024.0|33.0.1|20230901[/VERSION]
+With Circle
+     .Reset 
+     .Name "profile" 
+     .Curve "curve1" 
+     .Radius "0.322" 
+     .Xcenter "0" 
+     .Ycenter "0" 
+     .Segments "0" 
+     .Create
+End With
+
+'@ delete curve item: curve1:profile
+
+'[VERSION]2024.0|33.0.1|20230901[/VERSION]
+Curve.DeleteCurveItem "curve1", "profile"
+
+'@ define curve circle: curve1:profile
+
+'[VERSION]2024.0|33.0.1|20230901[/VERSION]
+With Circle
+     .Reset 
+     .Name "profile" 
+     .Curve "curve1" 
+     .Radius "0.322" 
+     .Xcenter "0" 
+     .Ycenter "0" 
+     .Segments "0" 
+     .Create
+End With
+
+'@ delete curve item: curve1:profile
+
+'[VERSION]2024.0|33.0.1|20230901[/VERSION]
+Curve.DeleteCurveItem "curve1", "profile"
+
+'@ define curve circle: curve1:profile
+
+'[VERSION]2024.0|33.0.1|20230901[/VERSION]
+With Circle
+     .Reset 
+     .Name "profile" 
+     .Curve "curve1" 
+     .Radius "0.322" 
+     .Xcenter "5" 
+     .Ycenter "5" 
+     .Segments "0" 
+     .Create
+End With
+
+'@ delete curve item: curve1:profile
+
+'[VERSION]2024.0|33.0.1|20230901[/VERSION]
+Curve.DeleteCurveItem "curve1", "profile"
+
+'@ define curve circle: curve1:profile1
+
+'[VERSION]2024.0|33.0.1|20230901[/VERSION]
+With Circle
+     .Reset 
+     .Name "profile1" 
+     .Curve "curve1" 
+     .Radius "0.322" 
+     .Xcenter "5" 
+     .Ycenter "5" 
+     .Segments "0" 
+     .Create
+End With
+
+'@ transform curve: rotate curve1:profile1
+
+'[VERSION]2024.0|33.0.1|20230901[/VERSION]
+With Transform 
+     .Reset 
+     .Name "curve1:profile1" 
+     .Origin "Free" 
+     .Center "5", "5", "0" 
+     .Angle "90", "0", "0" 
+     .MultipleObjects "False" 
+     .GroupObjects "False" 
+     .Repetitions "1" 
+     .MultipleSelection "False" 
+     .Transform "Curve", "Rotate" 
+End With
+
+'@ define coil: coil1
+
+'[VERSION]2024.0|33.0.1|20230901[/VERSION]
+With Coil
+     .Reset
+     .Name "coil1"
+     .Type "Coil"
+     .OperationMode "Current"
+     .ConductorModel "Stranded"
+     .ToolType "CurveCurve"
+     .Value "100"
+     .Phase "0.0"
+     .NTurns "1"
+     .Resistance "0.0"
+     .NStrands "120"
+     .StrandDiameter "0.05"
+     .LengthExtension "1.2"
+     .CurrentDirection "Regular"
+     .ProjectProfileToPathAdvanced "True"
+     .ProfileName "curve1:profile1"
+     .PathName "curve1:path1"
+     .Create
+End With
+
+'@ define curve circle: curve1:profile2
+
+'[VERSION]2024.0|33.0.1|20230901[/VERSION]
+With Circle
+     .Reset 
+     .Name "profile2" 
+     .Curve "curve1" 
+     .Radius "0.322" 
+     .Xcenter "5" 
+     .Ycenter "-5" 
+     .Segments "0" 
+     .Create
+End With
+
+'@ transform curve: rotate curve1:profile2
+
+'[VERSION]2024.0|33.0.1|20230901[/VERSION]
+With Transform 
+     .Reset 
+     .Name "curve1:profile2" 
+     .Origin "ShapeCenter" 
+     .Center "0", "0", "0" 
+     .Angle "90", "0", "0" 
+     .MultipleObjects "False" 
+     .GroupObjects "False" 
+     .Repetitions "1" 
+     .MultipleSelection "False" 
+     .Transform "Curve", "Rotate" 
+End With
+
+'@ define coil: coil2
+
+'[VERSION]2024.0|33.0.1|20230901[/VERSION]
+With Coil
+     .Reset
+     .Name "coil2"
+     .Type "Coil"
+     .OperationMode "Current"
+     .ConductorModel "Stranded"
+     .ToolType "CurveCurve"
+     .Value "100"
+     .Phase "0.0"
+     .NTurns "1"
+     .Resistance "0.0"
+     .NStrands "120"
+     .StrandDiameter "0.05"
+     .LengthExtension "1.2"
+     .CurrentDirection "Inverted"
+     .ProjectProfileToPathAdvanced "True"
+     .ProfileName "curve1:profile2"
+     .PathName "curve1:path2"
+     .Create
+End With
+
+'@ change coil direction: coil1
+
+'[VERSION]2024.0|33.0.1|20230901[/VERSION]
+Coil.FlipCurrentDirection "coil1"
+
+'@ change coil properties: coil2
+
+'[VERSION]2024.0|33.0.1|20230901[/VERSION]
+With Coil
+     .Reset
+     .Name "coil2"
+     .Type "Coil"
+     .OperationMode "Current"
+     .ConductorModel "Stranded"
+     .ToolType "CurveCurve"
+     .Value "100"
+     .Phase "0.0"
+     .NTurns "1"
+     .Resistance "0.0"
+     .NStrands "120"
+     .StrandDiameter "0.05"
+     .LengthExtension "1.2"
+     .CurrentDirection "Regular"
+     .Change
+End With
+
+'@ delete curve: curve1
+
+'[VERSION]2024.0|33.0.1|20230901[/VERSION]
+Curve.DeleteCurve "curve1"
+
+'@ delete component: component1
+
+'[VERSION]2024.0|33.0.1|20230901[/VERSION]
+Component.Delete "component1"
+
+'@ change coil properties: coil1
+
+'[VERSION]2024.0|33.0.1|20230901[/VERSION]
+With Coil
+     .Reset
+     .Name "coil1"
+     .Type "Coil"
+     .OperationMode "Current"
+     .ConductorModel "Stranded"
+     .ToolType "CurveCurve"
+     .Value "100"
+     .Phase "0.0"
+     .NTurns "1"
+     .Resistance "0.0"
+     .NStrands "120"
+     .StrandDiameter "0.05"
+     .LengthExtension "1.2"
+     .CurrentDirection "Regular"
+     .Change
+End With
+
+'@ define background
+
+'[VERSION]2024.0|33.0.1|20230901[/VERSION]
+With Background 
+     .ResetBackground 
+     .XminSpace "25" 
+     .XmaxSpace "25" 
+     .YminSpace "25" 
+     .YmaxSpace "25" 
+     .ZminSpace "25" 
+     .ZmaxSpace "25" 
+     .ApplyInAllDirections "False" 
+End With 
+
+With Material 
+     .Reset 
+     .Rho "1.204"
+     .ThermalType "Normal"
+     .ThermalConductivity "0.026"
+     .SpecificHeat "1005", "J/K/kg"
+     .DynamicViscosity "1.84e-5"
+     .UseEmissivity "True"
+     .Emissivity "0.0"
+     .MetabolicRate "0.0"
+     .VoxelConvection "0.0"
+     .BloodFlow "0"
+     .Absorptance "0"
+     .MechanicsType "Unused"
+     .IntrinsicCarrierDensity "0"
+     .FrqType "all"
+     .Type "Normal"
+     .MaterialUnit "Frequency", "Hz"
+     .MaterialUnit "Geometry", "m"
+     .MaterialUnit "Time", "s"
+     .MaterialUnit "Temperature", "K"
+     .Epsilon "1.00059"
+     .Mu "1.0"
+     .Sigma "0.0"
+     .TanD "0.0"
+     .TanDFreq "0.0"
+     .TanDGiven "False"
+     .TanDModel "ConstSigma"
+     .SetConstTanDStrategyEps "AutomaticOrder"
+     .ConstTanDModelOrderEps "3"
+     .DjordjevicSarkarUpperFreqEps "0"
+     .SetElParametricConductivity "False"
+     .ReferenceCoordSystem "Global"
+     .CoordSystemType "Cartesian"
+     .SigmaM "0"
+     .TanDM "0.0"
+     .TanDMFreq "0.0"
+     .TanDMGiven "False"
+     .TanDMModel "ConstSigma"
+     .SetConstTanDStrategyMu "AutomaticOrder"
+     .ConstTanDModelOrderMu "3"
+     .DjordjevicSarkarUpperFreqMu "0"
+     .SetMagParametricConductivity "False"
+     .DispModelEps  "None"
+     .DispModelMu "None"
+     .DispersiveFittingSchemeEps "Nth Order"
+     .MaximalOrderNthModelFitEps "10"
+     .ErrorLimitNthModelFitEps "0.1"
+     .UseOnlyDataInSimFreqRangeNthModelEps "False"
+     .DispersiveFittingSchemeMu "Nth Order"
+     .MaximalOrderNthModelFitMu "10"
+     .ErrorLimitNthModelFitMu "0.1"
+     .UseOnlyDataInSimFreqRangeNthModelMu "False"
+     .UseGeneralDispersionEps "False"
+     .UseGeneralDispersionMu "False"
+     .NLAnisotropy "False"
+     .NLAStackingFactor "1"
+     .NLADirectionX "1"
+     .NLADirectionY "0"
+     .NLADirectionZ "0"
+     .Colour "0.6", "0.6", "0.6" 
+     .Wireframe "False" 
+     .Reflection "False" 
+     .Allowoutline "True" 
+     .Transparentoutline "False" 
+     .Transparency "0" 
+     .ChangeBackgroundMaterial
+End With
+

@@ -1,0 +1,15 @@
+FeatureKeywords:string:modeler:history:header_not_parsed, modeler:load:fastloading, meshloading:problem_class_only, mesh::background::boolean, DELETERESULTS:0SP0, mesh:workflow:nru, mesh:workflow:srf2vol, mesh:workflow:boolean, mesh:workflow:boolean:advanced, mesh:workflow:cad2srf, acceleration:cpu:8, acceleration:cpudevices:1, background:normal, boundary:electric:xmax, boundary:electric:xmin, boundary:electric:ymax, boundary:electric:ymin, boundary:electric:zmax, boundary:electric:zmin, mesh:tet, mesh:tet:adaptive, solver:lf:mqs:fd, source:coil, source:coil:current:stranded, units:Capacitance:F, units:Conductance:S, units:Current:A, units:Frequency:Hz, units:Inductance:H, units:Length:mm, units:Resistance:Ohm, units:Temperature:degC, units:Time:s, units:Voltage:V, mesh:workflow:cadsurf, solver:lf:divcheck:ok, la:direct, la:precond:pdss7, la:iterative, modeler:hidfile:no_shape, modeler:hidfile:unique_ids, block:type:saved:EMSSCHEM, visualization:field_plot:default_engine, meshline:hex:check_after_loading:default, meshline:hex:handling_legacy:no
+LastWorkflowState:string:tetmesh:success
+solver_lf_tet/InitialFreePhysicalInMB:int:19774
+solver_lf_tet/MaxResidentSizeInMB:int:1043
+solver_lf_tet/MaxResidentSizeMiB:int:978
+solver_lf_tet/MinFreePhysicalInMB:int:19487
+solver_pp/InitialFreePhysicalInMB:int:19767
+solver_pp/MaxResidentSizeInMB:int:24
+solver_pp/MaxResidentSizeMiB:int:5
+solver_pp/MinFreePhysicalInMB:int:19765
+tetmesh/InitialFreePhysicalInMB:int:19545
+tetmesh/MaxResidentSizeInMB:int:58
+tetmesh/MaxResidentSizeMiB:int:34
+tetmesh/MinFreePhysicalInMB:int:19525
+---

@@ -1,0 +1,39 @@
+{
+    "lastModifiedBy": {
+        "build": 20230901,
+        "major": 2024,
+        "patch": 0
+    },
+    "reports": [
+        {
+            "items": [
+                {
+                    "description": "",
+                    "module": "ModelerViewer",
+                    "name": "Components",
+                    "options": "{\"addOverlay\":true}",
+                    "screenshotFilepath": "0bcbcf2f28c94ea09cf13ea233c1287f\\e_f_7_079bba4__abbd70_fde_be_a3e.png",
+                    "sortkey": 0,
+                    "treePath": "{\"plotSettings\":\"<?xml version=\\\"1.0\\\" encoding=\\\"UTF-8\\\"?>\\n<RememberPlots version=\\\"20200930\\\">\\n  <ModelViewSettings name=\\\"\\\" workplane=\\\"1\\\">\\n    <ViewSettings axes=\\\"1\\\" bbox=\\\"1\\\" wireframe=\\\"0\\\" infotext=\\\"1\\\">\\n      <Camera matrix=\\\"0.998096526 0.0399615951 -0.0470593423 0 -0.0398756526 0.999206245 0.00277228514 0 0.0471302122 -0.000891649746 0.998893201 0 0 0 0 1\\\" center=\\\"0.845660806 -0.261425763\\\" distance=\\\"838.229614\\\" scale=\\\"2.57748866\\\"/>\\n      <Cutplane active=\\\"0\\\" normal=\\\"0.859188974 0 0.51165843\\\" dist=\\\"0\\\" covermode=\\\"HIDE\\\"/>\\n    </ViewSettings>\\n  </ModelViewSettings>\\n</RememberPlots>\\n\",\"treePaths\":[\"Components\"]}",
+                    "uid": "e5f571079bba451abbd702fde5be2a3e",
+                    "vis3DFilepath": ""
+                },
+                {
+                    "description": "",
+                    "module": "ModelerViewer",
+                    "name": "Components",
+                    "options": "{\"addOverlay\":true}",
+                    "screenshotFilepath": "0bcbcf2f28c94ea09cf13ea233c1287f\\b7_ea33_d_fc4d_4bdb0_8c0d009aba_.png",
+                    "sortkey": 1,
+                    "treePath": "{\"plotSettings\":\"<?xml version=\\\"1.0\\\" encoding=\\\"UTF-8\\\"?>\\n<RememberPlots version=\\\"20200930\\\">\\n  <ModelViewSettings name=\\\"\\\" workplane=\\\"1\\\">\\n    <ViewSettings axes=\\\"1\\\" bbox=\\\"1\\\" wireframe=\\\"0\\\" infotext=\\\"1\\\">\\n      <Camera matrix=\\\"0.998096526 0.0399615951 -0.0470593423 0 -0.0398756526 0.999206245 0.00277228514 0 0.0471302122 -0.000891649746 0.998893201 0 0 0 0 1\\\" center=\\\"0.845660806 -0.261425763\\\" distance=\\\"838.229614\\\" scale=\\\"2.57748866\\\"/>\\n      <Cutplane active=\\\"0\\\" normal=\\\"0.859188974 0 0.51165843\\\" dist=\\\"0\\\" covermode=\\\"HIDE\\\"/>\\n    </ViewSettings>\\n  </ModelViewSettings>\\n</RememberPlots>\\n\",\"treePaths\":[\"Components\"]}",
+                    "uid": "b71ea331d5fc4d24bdb018c0d009aba5",
+                    "vis3DFilepath": ""
+                }
+            ],
+            "name": "Report 1",
+            "pathName": "0bcbcf2f28c94ea09cf13ea233c1287f",
+            "uid": "0bcbcf2f28c94ea09cf13ea233c1287f"
+        }
+    ],
+    "version": 20200902
+}

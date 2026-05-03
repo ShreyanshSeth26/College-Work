@@ -1,0 +1,9 @@
+Coil parameters at frequency [    1000.000 Hz](load system):
+____________________________________________________________
+coil1
+Current   : 1.000000e+02 + i 0.000000e+00 A (avg)
+Voltage   : 0.000000e+00 + i 1.197011e-02 V (avg)
+Impedance : 0.000000e+00 + i 1.197011e-04 Ohm
+Power     : 0.000000e+00 + i 1.197011e+00 W (avg)
+
+

@@ -1,0 +1,35 @@
+LF Frequency Domain Solver (MQS) - Adaptive Computation
+----------------------------------------------------------------------
+Pass: 1
+----------------------------------------------------------------------
+      Number of mesh cells:        21478
+      Number of unknowns:          137198
+      Timing:
+               System assembling:   0h :  0m :  0s
+               Linear solver:       0h :  0m :  0s
+               Error estimation:    0h :  0m :  0s
+
+      Energy:                      9.52161e-05 J
+----------------------------------------------------------------------
+
+----------------------------------------------------------------------
+Pass: 2
+----------------------------------------------------------------------
+      Number of mesh cells:        30289
+      Number of unknowns:          193266
+      Timing:
+               Mesh adaptation:     0h :  0m :  0s
+               System assembling:   0h :  0m :  0s
+               Linear solver:       0h :  0m :  1s
+               Error estimation:    0h :  0m :  0s
+
+      Relative estimated error:    0.00020466
+      Energy:                      9.52551e-05 J
+----------------------------------------------------------------------
+
+----------------------------------------------------------------------
+Total adaptive computation time:  0h :  0m :  4s
+
+Desired accuracy limit reached, mesh adaptation stopped.
+----------------------------------------------------------------------
+

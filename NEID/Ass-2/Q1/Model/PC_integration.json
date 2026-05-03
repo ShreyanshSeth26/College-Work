@@ -1,0 +1,19 @@
+{
+   "execution": {
+      "classname": "SMAPowerByEmagHPCFrameReduced",
+      "libname": "SMAPowerByEmagUI"
+   },
+   "inputVariables": [
+      {
+         "name": "coil_r",
+         "type": "float",
+         "value": 5.0
+      },
+      {
+         "name": "wire_r",
+         "type": "float",
+         "value": 0.332
+      }
+   ],
+   "outputVariables": []
+}

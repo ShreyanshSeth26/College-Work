@@ -1,0 +1,15 @@
+{
+    "parameters": [
+        {
+            "expr": "5",
+            "name": "coil_r",
+            "value": "5"
+        },
+        {
+            "expr": "0.332",
+            "name": "wire_r",
+            "value": "0.332"
+        }
+    ],
+    "version": 1
+}
